@@ -1,44 +1,52 @@
-// function Header() {
+// Exercise
+// function MainGoal() {
 //   return (
-//     <header>
-//       <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
-//       <h1>React Essentials</h1>
+//     <div>
+//       <h1>Main goal</h1>
 //       <p>
-//         Fundamental React concepts you will need for almost any app you are
-//         going to build!
+//         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel aut porro
+//         modi quas consequuntur ut eum deserunt ipsam, veniam, quod nisi eveniet
+//         harum temporibus numquam assumenda iusto iure similique corrupti.
 //       </p>
-//     </header>
+//       <p>
+//         <strong>Lorem ipsum </strong>dolor sit amet consectetur adipisicing
+//         elit. Atque ab quibusdam molestias?
+//       </p>
+//       <p>
+//         {' '}
+//         <strong>Lorem,</strong> ipsum dolor sit amet consectetur adipisicing
+//         elit.
+//       </p>
+//     </div>
 //   );
 // }
 
-function MainGoal() {
+const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
+
+function genRandomInt(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+
+function Header() {
+  const description = reactDescriptions[genRandomInt(2)];
+
   return (
-    <div>
-      <h1>Main goal</h1>
+    <header>
+      <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+      <h1>React Essentials</h1>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel aut porro
-        modi quas consequuntur ut eum deserunt ipsam, veniam, quod nisi eveniet
-        harum temporibus numquam assumenda iusto iure similique corrupti.
+        {description} React concepts you will need for almost any app you are
+        going to build!
       </p>
-      <p>
-        <strong>Lorem ipsum </strong>dolor sit amet consectetur adipisicing
-        elit. Atque ab quibusdam molestias?
-      </p>
-      <p>
-        {' '}
-        <strong>Lorem,</strong> ipsum dolor sit amet consectetur adipisicing
-        elit.
-      </p>
-    </div>
+    </header>
   );
 }
 
 function App() {
   return (
     <div>
-      <MainGoal />
-      {/* <Header /> */}
-
+      {/* <MainGoal /> */}
+      <Header />
       <main>
         <h2>Time to get started!</h2>
       </main>
