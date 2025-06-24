@@ -40,12 +40,27 @@ function CoreConcept({ image, title, description }) {
     </li>
   );
 }
+
+function CourseGoal({ title, description }) {
+  return (
+    <li>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </li>
+  );
+}
 function App() {
   return (
     <div>
       {/* <MainGoal /> */}
       <Header />
       <main>
+        <section id="core-concepts">
+          <ul>
+            <CourseGoal title="Learn react" description="in-depth" />
+            <CourseGoal title="exercise" description="done by me" />
+          </ul>
+        </section>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
