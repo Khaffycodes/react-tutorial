@@ -1,6 +1,8 @@
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcepts.jsx';
+import TabButton from './components/TabButton.jsx';
+import Card from './components/exercise.jsx';
 
 function App() {
   return (
@@ -26,6 +28,26 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
+        </section>
+        <section>
+          {/* <Card name="shile">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+              nesciunt quo molestiae animi, molestias ipsam beatae at velit
+              alias corrupti labore aspernatur impedit quaerat sapiente odit!
+              Corrupti perspiciatis reprehenderit architecto!
+            </p>
+          </Card>
+         */}
         </section>
       </main>
     </div>
