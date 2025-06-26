@@ -1,15 +1,23 @@
+import { useState } from 'react';
+
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcepts.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+
   function handleSelect(selectedBtn) {
-    console.log(selectedBtn);
+    //selectedBtn - components,jsx,props,state
+    setSelectedTopic(selectedBtn);
+    //console.log(selectedTopic);
   }
+
+  console.log('APP COMPONENT EXECUTING ');
+
   return (
     <div>
-      {/* <MainGoal /> */}
       <Header />
       <main>
         {/* <section id="core-concepts">
@@ -41,7 +49,7 @@ function App() {
             <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
           </menu>
-          Dynmic content
+          {selectedTopic}
         </section>
       </main>
     </div>
