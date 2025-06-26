@@ -53,3 +53,21 @@
         
         </section> */
 }
+
+// import React from 'react';
+
+// // don't change the Component name "App"
+// export default function App() {
+//   const [isStyled, setIsStyled] = React.useState(false);
+
+//   function handleClick() {
+//     setIsStyled((isStyled) => !isStyled);
+//   }
+
+//   return (
+//     <div>
+//       <p className={isStyled ? 'active' : undefined}>Style me!</p>
+//       <button onClick={handleClick}>Toggle style</button>
+//     </div>
+//   );
+// }
