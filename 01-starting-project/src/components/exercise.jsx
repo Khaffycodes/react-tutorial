@@ -39,3 +39,17 @@
 //     </article>
 //   );
 // }
+
+{
+  /* <section>
+          <Card name="shile">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+              nesciunt quo molestiae animi, molestias ipsam beatae at velit
+              alias corrupti labore aspernatur impedit quaerat sapiente odit!
+              Corrupti perspiciatis reprehenderit architecto!
+            </p>
+          </Card>
+        
+        </section> */
+}

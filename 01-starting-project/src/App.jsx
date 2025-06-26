@@ -2,9 +2,11 @@ import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcepts.jsx';
 import TabButton from './components/TabButton.jsx';
-import Card from './components/exercise.jsx';
 
 function App() {
+  function handleSelect(selectedBtn) {
+    console.log(selectedBtn);
+  }
   return (
     <div>
       {/* <MainGoal /> */}
@@ -32,22 +34,14 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => handleSelect('components')}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect('JSX')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
           </menu>
-        </section>
-        <section>
-          {/* <Card name="shile">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
-              nesciunt quo molestiae animi, molestias ipsam beatae at velit
-              alias corrupti labore aspernatur impedit quaerat sapiente odit!
-              Corrupti perspiciatis reprehenderit architecto!
-            </p>
-          </Card>
-         */}
+          Dynmic content
         </section>
       </main>
     </div>
