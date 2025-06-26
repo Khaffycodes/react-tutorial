@@ -5,6 +5,8 @@ import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcepts.jsx';
 import TabButton from './components/TabButton.jsx';
 import { EXAMPLES } from './data.js';
+import { TODOS } from './data.js';
+import Todo from './components/exercise.jsx';
 
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -42,6 +44,13 @@ function App() {
           <ul>
             {CORE_CONCEPTS.map((conceptItem) => (
               <CoreConcept key={conceptItem.title} {...conceptItem} />
+            ))}
+          </ul>
+        </section>
+        <section id="core-concepts">
+          <ul>
+            {TODOS.map((todoItem) => (
+              <Todo key={todoItem} text={todoItem} />
             ))}
           </ul>
         </section>
