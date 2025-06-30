@@ -1,11 +1,7 @@
-import { useState } from 'react';
-
 import Header from './components/Header.jsx';
 import CoreConcepts from './components/CoreConcepts.jsx';
-import TabButton from './components/TabButton.jsx';
-import { EXAMPLES } from './data.js';
-import { TODOS } from './data.js';
-import Todo from './components/exercise.jsx';
+import Examples from './components/Examples.jsx';
+import Todos from './components/Todos.jsx';
 
 function App() {
   return (
@@ -13,13 +9,31 @@ function App() {
       <Header />
       <main>
         <CoreConcepts />
-        <section id="core-concepts">
-          <ul>
-            {TODOS.map((todoItem) => (
-              <Todo key={todoItem} text={todoItem} />
-            ))}
-          </ul>
-        </section>
+        <Examples />
+        <Todos />
+        {/* another approach to rendering conditionally */}
+        {/* {!selectedTopic ? (
+            <p>Please select a topic</p>
+          ) : (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          )} */}
+        {/* another approach to rendering conditionally */}
+        {/* {!selectedTopic && <p>Please select a topic</p>}{' '}
+          {selectedTopic && (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          )} */}
       </main>
     </>
   );
