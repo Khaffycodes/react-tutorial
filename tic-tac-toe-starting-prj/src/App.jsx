@@ -12,7 +12,7 @@ function App() {
   return (
     <main>
       <div id="game-container">
-        <ol id="players">
+        <ol id="players" className="highlight-player">
           <Player
             initialName="Player 1"
             symbol="X"
