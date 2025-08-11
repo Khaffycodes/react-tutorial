@@ -1,3 +1,3 @@
 export default function Log() {
-  return <ol></ol>;
+  return <ol id="log"></ol>;
 }
