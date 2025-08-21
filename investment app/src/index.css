@@ -19,7 +19,6 @@ body {
   margin: 3rem auto;
 }
 
-
 #header img {
   width: 5rem;
   height: 5rem;
@@ -86,4 +85,15 @@ body {
 
 .center {
   text-align: center;
+}
+
+button {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1rem;
+  background: #c2e9e0;
+  color: linear-gradient(180deg, #307e6c, #2b996d);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 3rem;
 }

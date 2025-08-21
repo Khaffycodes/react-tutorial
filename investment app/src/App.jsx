@@ -2,7 +2,7 @@ import { useState } from 'react';
 import FetchInputs from './components/FetchInputs';
 import Header from './components/Header';
 import Result from './components/Result';
-import { investment } from './util/investment';
+import { calculateInvestmentResults } from './util/investment';
 
 function App() {
   const [userInput, setUserInput] = useState(null);
@@ -15,7 +15,7 @@ function App() {
   // Calculate results only if user has entered inputs
   let results = null;
   if (userInput) {
-    results = investment(userInput);
+    results = calculateInvestmentResults(userInput);
   }
 
   return (

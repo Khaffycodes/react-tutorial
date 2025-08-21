@@ -30,23 +30,47 @@ export default function FetchInputs() {
   }
 
   return (
-    <form id="user-input" className="input-group">
-      <label>
-        Initial Investment
-        <input type="text" />
-      </label>
-      <label>
-        Annual Investment
-        <input type="text" />
-      </label>
-      <label>
-        Expected Return
-        <input type="text" />
-      </label>
-      <label>
-        Duration
-        <input type="text" />
-      </label>
+    <form onSubmit={handleSubmit} id="user-input">
+      <main className="input-group">
+        <label>
+          Initial Investment
+          <input
+            type="number"
+            name="initialInvestment"
+            value={inputs.initialInvestment}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Annual Investment
+          <input
+            type="number"
+            name="initialInvestment"
+            value={inputs.annualInvestment}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Expected Return
+          <input
+            type="number"
+            name="initialInvestment"
+            value={inputs.expectedReturn}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Duration
+          <input
+            type="number"
+            name="initialInvestment"
+            value={inputs.duration}
+            onChange={handleChange}
+          />
+        </label>
+      </main>
+
+      <button type="submit">Calculate</button>
     </form>
   );
 }

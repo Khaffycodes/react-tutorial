@@ -1,37 +1,23 @@
-export default function Result() {
+export default function Result(results) {
   return (
     <table id="result">
       <thead>
         <tr>
           <th>Year</th>
-          <th>Investment Value</th>
-          <th>Interest (Year)</th>
-          <th>Total Interest</th>
-          <th>Invested Capital</th>
+          <th>Interest Earned</th>
+          <th>End Value</th>
+          <th>Annual Investment</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>300</td>
-          <td>25</td>
-          <td>15</td>
-          <td>2000</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>500</td>
-          <td>45</td>
-          <td>25</td>
-          <td>6000</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>1000</td>
-          <td>50</td>
-          <td>25</td>
-          <td>25000</td>
-        </tr>
+        {results.map((yearData) => (
+          <tr key={yearData.year}>
+            <td>{yearData.year}</td>
+            <td>{yearData.interest.toFixed(2)}</td>
+            <td>{yearData.valueEndOfYear.toFixed(2)}</td>
+            <td>{yearData.annualInvestment}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
