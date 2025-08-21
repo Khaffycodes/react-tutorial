@@ -1,32 +1,36 @@
 export default function Result() {
   return (
-    <table border="1" cellpadding="8" cellspacing="0">
+    <table id="result">
       <thead>
         <tr>
-          <th>S/N</th>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Country</th>
+          <th>Year</th>
+          <th>Investment Value</th>
+          <th>Interest (Year)</th>
+          <th>Total Interest</th>
+          <th>Invested Capital</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>Aisha</td>
+          <td>300</td>
           <td>25</td>
-          <td>Nigeria</td>
+          <td>15</td>
+          <td>2000</td>
         </tr>
         <tr>
           <td>2</td>
-          <td>James</td>
-          <td>30</td>
-          <td>USA</td>
+          <td>500</td>
+          <td>45</td>
+          <td>25</td>
+          <td>6000</td>
         </tr>
         <tr>
           <td>3</td>
-          <td>Sophia</td>
-          <td>28</td>
-          <td>UK</td>
+          <td>1000</td>
+          <td>50</td>
+          <td>25</td>
+          <td>25000</td>
         </tr>
       </tbody>
     </table>

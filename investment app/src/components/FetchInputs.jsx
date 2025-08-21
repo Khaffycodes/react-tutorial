@@ -1,14 +1,36 @@
 import { useState } from 'react';
 
 export default function FetchInputs() {
-  const [initialIv, setInitialIv] = useState();
+  const [inputs, setInputs] = useState({
+    initialInvestment: '',
+    annualInvestment: '',
+    expectedReturn: '',
+    duration: '',
+  });
+
+  function handleChange(e) {
+    const { amount, value } = e.target;
+    setInputs((prev) => ({
+      ...prev,
+      [amount]: value,
+    }));
+  }
 
   function handleSubmit(e) {
     e.preventDefault(); // prevent page refresh
+
+    const investmentData = {
+      initialInvestment: +inputs.initialInvestment,
+      annualInvestment: +inputs.annualInvestment,
+      expectedReturn: +inputs.expectedReturn,
+      duration: +inputs.duration,
+    };
+
+    onCalculate(investmentData); // send data up to parent
   }
 
   return (
-    <form onSubmit={handleSubmit} id="user-input" className="input-group">
+    <form id="user-input" className="input-group">
       <label>
         Initial Investment
         <input type="text" />
@@ -28,3 +50,31 @@ export default function FetchInputs() {
     </form>
   );
 }
+
+//  const [inputs, setInputs] = useState({
+//     initialInvestment: "",
+//     annualInvestment: "",
+//     expectedReturn: "",
+//     duration: "",
+//   });
+
+// function handleChange(e) {
+//   const { amount, value } = e.target;
+//   setInputs((prev) => ({
+//     ...prev,
+//     [amount]: value,
+//   }));
+// }
+
+// function handleSubmit(e) {
+//   e.preventDefault();
+
+//   const investmentData = {
+//     initialInvestment: +inputs.initialInvestment,
+//     annualInvestment: +inputs.annualInvestment,
+//     expectedReturn: +inputs.expectedReturn,
+//     duration: +inputs.duration,
+//   };
+
+//   onCalculate(investmentData); // send data up to parent
+// }
