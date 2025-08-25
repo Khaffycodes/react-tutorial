@@ -1,35 +1,36 @@
 import { useState } from 'react';
-import FetchInputs from './components/FetchInputs';
+import UserInput from './components/UserInput';
 import Header from './components/Header';
 import Result from './components/Result';
-import { calculateInvestmentResults } from './util/investment';
 
 function App() {
-  const [userInput, setUserInput] = useState(null);
+  const [userInputs, setUserInput] = useState({
+    initialInvestment: 12000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
 
-  function handleCalculate(inputValues) {
-    // inputValues comes from UserInput component
-    setUserInput(inputValues);
-  }
-
-  // Calculate results only if user has entered inputs
-  let results = null;
-  if (userInput) {
-    results = calculateInvestmentResults(userInput);
+  const inputIsValid = userInputs.duration >= 1;
+  function handleChange(inputIdentifier, newValue) {
+    setUserInput((prevUserInput) => {
+      return {
+        ...prevUserInput,
+        [inputIdentifier]: +newValue,
+      };
+    });
   }
 
   return (
     <>
       <Header />
-      <main>
-        <FetchInputs />
-        <Result />
-      </main>
+      <UserInput userInput={userInputs} onChange={handleChange} />
+      {!inputIsValid && (
+        <p className="center">Please enter a duration greater than zero</p>
+      )}
+      {inputIsValid && <Result input={userInputs} />}
     </>
   );
 }
 
 export default App;
-
-//onCalculate={handleCalculate}
-//{results && <ResultsTable results={results} />}
