@@ -21,18 +21,6 @@ button {
   line-height: inherit;
 }
 
-button {
-  cursor: pointer;
-  background: none;
-  line-height: inherit;
-}
-
-button {
-  cursor: pointer;
-  background: none;
-  line-height: inherit;
-}
-
 button:focus {
   outline: none;
 }
