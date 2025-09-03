@@ -5,8 +5,9 @@ export default function Results({ input }) {
   calculateInvestmentResults(input, results);
 
   if (results.length === 0) {
-    return <p className="center">Invalid input data provided</p>;
+    return <p className="center">Invalid input data provided.</p>;
   }
+
   const initialInvestment =
     results[0].valueEndOfYear -
     results[0].interest -
